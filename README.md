@@ -7,7 +7,9 @@ This class will convert a list into XML
 	based on a rules dictionary.
 	The library comes with a convention for convertion. Assuming
 	that you have the next list:
+```
 	myList = ['john', 'michael', 'therry', 'david', 10, 5, 12, 7]
+```
 	and you want to generate the following structure of Xml:
 	<classroom>
 		<student name="john" note="10" />
