@@ -10,7 +10,7 @@ This class will convert a list into XML
 ```
 	myList = ['john', 'michael', 'therry', 'david', 10, 5, 12, 7]
 ```
-	and you want to generate the following structure of Xml:
+and you want to generate the following structure of Xml:
 ```
 	<classroom>
 		<student name="john" note="10" />
@@ -20,7 +20,7 @@ This class will convert a list into XML
 		</teachers>
 	</classroom>
 ```
-	The rule for generating this is:
+The rule for generating this is:
 ```
 	rule = {
 		'classroom':
