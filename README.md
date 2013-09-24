@@ -11,6 +11,7 @@ This class will convert a list into XML
 	myList = ['john', 'michael', 'therry', 'david', 10, 5, 12, 7]
 ```
 	and you want to generate the following structure of Xml:
+```
 	<classroom>
 		<student name="john" note="10" />
 		<student name="therry" note="12" />
@@ -18,7 +19,9 @@ This class will convert a list into XML
 			<teacher name="david" />
 		</teachers>
 	</classroom>
+```
 	The rule for generating this is:
+```
 	rule = {
 		'classroom':
 		{
@@ -40,16 +43,17 @@ This class will convert a list into XML
 
 		}
 	}
-
+```
 	The library provides two constructs:
 	_attr - this will be a dictionary with attributes for the current element. The key of the dictionary will represents the attribute name and the value will represent the index from the list.
 
 	_child - this will be the child element
 
-	Call the object:
+	Calling the object:
+```
 	listXml = listToXml(rule, myList)
 	listXml.parse()
 	print( listXml.getXml() ) 
-	
+```	
 	This will print the indented unicode Xml.
 
