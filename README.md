@@ -12,48 +12,48 @@ This class will convert a list into XML
 ```
 and you want to generate the following structure of Xml:
 ```
-	<classroom>
-		<student name="john" note="10" />
-		<student name="therry" note="12" />
-		<teachers>
-			<teacher name="david" />
-		</teachers>
-	</classroom>
+<classroom>
+	<student name="john" note="10" />
+	<student name="therry" note="12" />
+	<teachers>
+		<teacher name="david" />
+	</teachers>
+</classroom>
 ```
 The rule for generating this is:
 ```
-	rule = {
-		'classroom':
+rule = {
+	'classroom':
+	{
+		'_attr':
 		{
-			'_attr':
+			'name': 0,
+			'note': 4
+		},
+		'_child':
+		{
+			'teachers':
 			{
-				'name': 0,
-				'note': 4
-			},
-			'_child':
-			{
-				'teachers':
+				'_attr':
 				{
-					'_attr':
-					{
-						'name': 3
-					}
+					'name': 3
 				}
 			}
-
 		}
+
 	}
+}
 ```
-	The library provides two constructs:
-	_attr - this will be a dictionary with attributes for the current element. The key of the dictionary will represents the attribute name and the value will represent the index from the list.
+The library provides two constructs:
+_attr - this will be a dictionary with attributes for the current element. The key of the dictionary will represents the attribute name and the value will represent the index from the list.
 
-	_child - this will be the child element
+_child - this will be the child element
 
-	Calling the object:
+Calling the object:
 ```
-	listXml = listToXml(rule, myList)
-	listXml.parse()
-	print( listXml.getXml() ) 
+listXml = listToXml(rule, myList)
+listXml.parse()
+print( listXml.getXml() ) 
 ```	
-	This will print the indented unicode Xml.
+This will print the indented unicode Xml.
 
